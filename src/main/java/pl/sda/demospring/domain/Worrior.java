@@ -7,11 +7,10 @@ public class Worrior {
     private Quest quest;
 
 
-
-    public Worrior(String name, int age) {
+    public Worrior(String name, int age, Quest quest) {
         this.name = name;
         this.age = age;
-        this.quest = new Quest("Protect comrade");
+        this.quest = quest;
     }
 
     @Override
