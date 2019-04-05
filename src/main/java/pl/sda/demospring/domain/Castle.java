@@ -1,6 +1,7 @@
 package pl.sda.demospring.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -9,7 +10,8 @@ import javax.annotation.PreDestroy;
 @Component
 public class Castle {
 
-    private String name = "Mordor";
+    @Value("Mordor")
+    private String name;
 
     @Autowired
     Worrior worrior;

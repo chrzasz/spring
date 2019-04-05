@@ -6,10 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Worrior {
 
-    @Value("Greg")
-    private String name;
-    @Value("18")
-    private int age;
+    private String name = "Greg";
+    private int age = 18;
     private Quest quest;
 
     public Worrior() {
