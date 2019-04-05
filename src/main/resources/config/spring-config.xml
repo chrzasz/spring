@@ -16,7 +16,7 @@
 
     <bean id="castle" class="pl.sda.demospring.domain.Castle" init-method="build" destroy-method="destroy">
         <constructor-arg index="0" ref="worrior"/>
-
+        <property name="name" value="${my.castle.name:Head Quarter}"/>
     </bean>
 
 
