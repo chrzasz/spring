@@ -25,7 +25,7 @@ public class MainConfig {
         return worrior;
     }
 
-    @Bean
+    @Bean(name = "bean", initMethod = "build", destroyMethod = "destroy")
     @Value("${my.castle.name:Head Quarter}")
     public Castle castle(String name) {
         Castle castle = new Castle(worrior());
