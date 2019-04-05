@@ -15,11 +15,12 @@ public class Castle {
     @Value("${my.castle.name:Mordor}")
     private String name;
 
-    @Autowired
+
     Worrior worrior;
 
-    public Castle() {
-
+    @Autowired
+    public Castle(Worrior worrior) {
+        this.worrior = worrior;
     }
 
     @PostConstruct
