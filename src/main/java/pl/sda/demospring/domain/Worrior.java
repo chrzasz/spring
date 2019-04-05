@@ -13,6 +13,15 @@ public class Worrior {
         this.quest = quest;
     }
 
+    public Worrior(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void setQuest(Quest quest) {
+        this.quest = quest;
+    }
+
     @Override
     public String toString() {
         return "Worrior{" +

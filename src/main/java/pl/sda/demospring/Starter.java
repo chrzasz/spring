@@ -17,5 +17,11 @@ public class Starter implements CommandLineRunner {
         Quest killOrc = new Quest("Kill Orc");
         Worrior human = new Worrior("Greg", 35,killOrc);
         System.out.println(human);
+        Worrior wizzard = new Worrior("Oz",42);
+        System.out.println(wizzard);
+        Quest teleport = new Quest("Teleport");
+        wizzard.setQuest(teleport);
+        System.out.println(wizzard);
+
     }
 }
