@@ -1,5 +1,8 @@
 package pl.sda.demospring.domain;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Worrior {
 
     private String name;
@@ -7,27 +10,26 @@ public class Worrior {
     private Quest quest;
 
 
-    public Worrior(String name, int age, Quest quest) {
-        this.name = name;
-        this.age = age;
-        this.quest = quest;
-    }
+//    public Worrior(String name, int age, Quest quest) {
+//        this.name = name;
+//        this.age = age;
+//        this.quest = quest;
+//    }
 
     public Worrior(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public void setQuest(Quest quest) {
-        this.quest = quest;
-    }
+//    public void setQuest(Quest quest) {
+//        this.quest = quest;
+//    }
 
     @Override
     public String toString() {
         return "Worrior{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", quest=" + quest +
                 '}';
     }
 }
