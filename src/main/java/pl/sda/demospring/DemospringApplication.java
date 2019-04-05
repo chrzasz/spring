@@ -9,9 +9,7 @@ import pl.sda.demospring.domain.Castle;
 public class DemospringApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext ctx = SpringApplication.run(DemospringApplication.class, args);
-        Castle castle = (Castle)ctx.getBean("castle");
-        System.out.println(castle);
+        SpringApplication.run(DemospringApplication.class, args);
     }
 
 }
