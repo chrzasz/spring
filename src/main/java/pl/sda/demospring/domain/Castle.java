@@ -1,5 +1,6 @@
 package pl.sda.demospring.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -9,6 +10,9 @@ import javax.annotation.PreDestroy;
 public class Castle {
 
     private String name = "Mordor";
+
+    @Autowired
+    Worrior worrior;
 
     public Castle() {
 
@@ -28,6 +32,7 @@ public class Castle {
     public String toString() {
         return "Castle{" +
                 "name='" + name + '\'' +
+                ", worrior=" + worrior +
                 '}';
     }
 }
