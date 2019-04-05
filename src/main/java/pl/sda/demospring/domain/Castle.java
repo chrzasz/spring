@@ -23,6 +23,11 @@ public class Castle {
         this.worrior = worrior;
     }
 
+    Castle(String name, Worrior worrior) {
+        this.name = name;
+        this.worrior = worrior;
+    }
+
     @PostConstruct
     public void build() {
         System.out.println(name + " has been build");
