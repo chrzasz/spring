@@ -10,7 +10,7 @@
     <bean id="worrior" class="pl.sda.demospring.domain.Worrior">
         <constructor-arg index="0" value="Worrior Default"/>
         <constructor-arg index="1" value="18"/>
-
+        <property name="quest" ref="quest"/>
     </bean>
 
 
