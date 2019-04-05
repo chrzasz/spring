@@ -13,9 +13,6 @@ import pl.sda.demospring.domain.Worrior;
 @PropertySource("classpath:castle.properties")
 public class MainConfig {
 
-    @Value("${my.castle.name:Head Quarter}")
-    String name;
-
     @Bean
     public Quest createQuest() {
         return new Quest();
@@ -29,7 +26,8 @@ public class MainConfig {
     }
 
     @Bean
-    public Castle castle() {
+    @Value("${my.castle.name:Head Quarter}")
+    public Castle castle(String name) {
         Castle castle = new Castle(worrior());
         castle.setName(name);
         return castle;
