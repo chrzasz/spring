@@ -1,16 +1,21 @@
 package pl.sda.demospring.domain;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Worrior {
 
+    @Value("Greg")
     private String name;
+    @Value("18")
     private int age;
     private Quest quest;
 
+    public Worrior() {
+    }
 
-//    public Worrior(String name, int age, Quest quest) {
+    //    public Worrior(String name, int age, Quest quest) {
 //        this.name = name;
 //        this.age = age;
 //        this.quest = quest;
