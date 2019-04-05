@@ -23,4 +23,11 @@ public class Castle {
     public void destroy() {
         System.out.println(name + " is to be destroyed");
     }
+
+    @Override
+    public String toString() {
+        return "Castle{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
