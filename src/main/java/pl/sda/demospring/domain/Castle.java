@@ -10,7 +10,7 @@ import javax.annotation.PreDestroy;
 @Component
 public class Castle {
 
-    @Value("Mordor")
+    @Value("${my.castle.name}")
     private String name;
 
     @Autowired
