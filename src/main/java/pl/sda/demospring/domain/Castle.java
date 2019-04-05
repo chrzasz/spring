@@ -1,11 +1,18 @@
 package pl.sda.demospring.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Castle {
 
+    @Value("${my.castle.name:Default Castle}")
     private String name;
 
     Worrior worrior;
 
+    @Autowired
     public Castle(Worrior worrior) {
         this.worrior = worrior;
     }
