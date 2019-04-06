@@ -22,13 +22,17 @@ public class Starter implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-//        System.out.println(questRepository);
+        questRepository.createRandomQuests();
+        System.out.println(questRepository);
+        questRepository.createRandomQuests();
+        System.out.println(questRepository);
+        questRepository.createRandomQuests();
+        System.out.println(questRepository);
 
         questService.assignRandomQuest("Goliat");
         questService.assignRandomQuest("Protos");
         questService.assignRandomQuest("David");
 
         System.out.println(worriorRepository);
-
     }
 }

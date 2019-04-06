@@ -6,11 +6,14 @@ import pl.sda.demospring.domain.Quest;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Repository
 public class QuestRepository {
 
     List<Quest> questList = new ArrayList<>();
+
+    Random rnd = new Random();
 
     public void createQuest(String description) {
         questList.add(new Quest(description));
@@ -24,11 +27,20 @@ public class QuestRepository {
         return questList;
     }
 
+    public void createRandomQuests() {
+        List<String> descriptions = new ArrayList<>();
+        descriptions.add("Save the Queen");
+        descriptions.add("Feed horses");
+        descriptions.add("Fight");
+        descriptions.add("Kill dragon");
+        descriptions.add("Kill orc");
+
+        createQuest(descriptions.get(rnd.nextInt(descriptions.size())));
+    }
+
     @PostConstruct
     public void init() {
-        createQuest("Save the Queen");
-        createQuest("Feed horses");
-        createQuest("Fight");
+
     }
 
     @Override
