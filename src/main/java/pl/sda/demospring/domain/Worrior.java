@@ -17,7 +17,6 @@ public class Worrior {
     }
 
     public void setQuest(Quest quest) {
-        System.out.println("Setting quest");
         this.quest = quest;
     }
 

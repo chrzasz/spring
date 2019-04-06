@@ -25,6 +25,7 @@ public class QuestService {
         List<Quest> allQuests = questRepository.getAll();
         Quest randomQuest = allQuests.get(rand.nextInt(allQuests.size()));
         worriorRepository.getWorrior(worriorName).setQuest(randomQuest);
+        questRepository.deleteQuest(randomQuest);
     }
 
 }

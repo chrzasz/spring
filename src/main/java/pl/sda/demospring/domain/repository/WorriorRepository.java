@@ -37,6 +37,7 @@ public class WorriorRepository {
     public void build() {
         createWorrior("Protos", 19);
         createWorrior("Goliat", 20);
+        createWorrior("David", 22);
     }
 
 

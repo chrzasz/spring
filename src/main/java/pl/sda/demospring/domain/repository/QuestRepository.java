@@ -16,6 +16,10 @@ public class QuestRepository {
         questList.add(new Quest(description));
     }
 
+    public void deleteQuest(Quest quest) {
+        questList.remove(quest);
+    }
+
     public List<Quest> getAll() {
         return questList;
     }
@@ -24,6 +28,7 @@ public class QuestRepository {
     public void init() {
         createQuest("Save the Queen");
         createQuest("Feed horses");
+        createQuest("Fight");
     }
 
     @Override

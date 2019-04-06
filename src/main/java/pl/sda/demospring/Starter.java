@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pl.sda.demospring.domain.repository.QuestRepository;
 import pl.sda.demospring.domain.repository.WorriorRepository;
+import pl.sda.demospring.services.QuestService;
 
 @Component
 public class Starter implements CommandLineRunner {
@@ -15,12 +16,19 @@ public class Starter implements CommandLineRunner {
     @Autowired
     QuestRepository questRepository;
 
+    @Autowired
+    QuestService questService;
+
     @Override
     public void run(String... args) throws Exception {
 
-        System.out.println(worriorRepository);
-        System.out.println(questRepository);
+//        System.out.println(questRepository);
 
+        questService.assignRandomQuest("Goliat");
+        questService.assignRandomQuest("Protos");
+        questService.assignRandomQuest("David");
+
+        System.out.println(worriorRepository);
 
     }
 }
