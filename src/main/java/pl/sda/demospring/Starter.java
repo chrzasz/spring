@@ -2,12 +2,14 @@ package pl.sda.demospring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import pl.sda.demospring.domain.repository.QuestRepository;
 import pl.sda.demospring.domain.repository.WorriorRepository;
 import pl.sda.demospring.services.QuestService;
 
 @Component
+@Scope("singleton")
 public class Starter implements CommandLineRunner {
 
     @Autowired

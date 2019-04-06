@@ -1,5 +1,6 @@
 package pl.sda.demospring.domain.repository;
 
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Repository;
 import pl.sda.demospring.domain.Quest;
 
@@ -27,6 +28,7 @@ public class QuestRepository {
         return questList;
     }
 
+    @Scheduled(fixedDelay = 1000)
     public void createRandomQuests() {
         List<String> descriptions = new ArrayList<>();
         descriptions.add("Save the Queen");
@@ -35,7 +37,9 @@ public class QuestRepository {
         descriptions.add("Kill dragon");
         descriptions.add("Kill orc");
 
-        createQuest(descriptions.get(rnd.nextInt(descriptions.size())));
+        String description = descriptions.get(rnd.nextInt(descriptions.size()));
+        System.out.println(description + " created");
+        createQuest(description);
     }
 
     @PostConstruct
