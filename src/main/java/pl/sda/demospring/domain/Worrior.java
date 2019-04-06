@@ -1,9 +1,5 @@
 package pl.sda.demospring.domain;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
 public class Worrior {
 
     private String name;
@@ -20,7 +16,6 @@ public class Worrior {
         this.age = age;
     }
 
-    @Autowired
     public void setQuest(Quest quest) {
         System.out.println("Setting quest");
         this.quest = quest;

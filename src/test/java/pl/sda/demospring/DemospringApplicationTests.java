@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import pl.sda.demospring.domain.Castle;
 import pl.sda.demospring.domain.Worrior;
+import pl.sda.demospring.domain.repository.WorriorRepository;
 
 import static org.junit.Assert.assertEquals;
 
@@ -23,11 +23,11 @@ public class DemospringApplicationTests {
 	Worrior worrior;
 
 	@Autowired
-	Castle castle;
+    WorriorRepository castle;
 
 	@Test
 	public void testCastle() {
-		String expected = "Castle{name='White Tower', worrior=Worrior{name='Greg', age=18, quest=Quest{description='default quest'}}}";
+        String expected = "WorriorRepository{name='White Tower', worrior=Worrior{name='Greg', age=18, quest=Quest{description='default quest'}}}";
 		assertEquals(expected, castle.toString());
 	}
 
