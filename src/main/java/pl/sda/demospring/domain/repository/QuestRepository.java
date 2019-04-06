@@ -28,7 +28,7 @@ public class QuestRepository {
         return questList;
     }
 
-    @Scheduled(fixedDelay = 1000)
+    @Scheduled(fixedDelayString = "${questCreationDelay}")
     public void createRandomQuests() {
         List<String> descriptions = new ArrayList<>();
         descriptions.add("Save the Queen");
@@ -38,7 +38,7 @@ public class QuestRepository {
         descriptions.add("Kill orc");
 
         String description = descriptions.get(rnd.nextInt(descriptions.size()));
-        System.out.println(description + " created");
+        System.out.println(description);
         createQuest(description);
     }
 
