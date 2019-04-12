@@ -38,7 +38,6 @@ public class QuestRepository {
         descriptions.add("Kill orc");
 
         String description = descriptions.get(rnd.nextInt(descriptions.size()));
-        System.out.println(description);
         createQuest(description);
     }
 

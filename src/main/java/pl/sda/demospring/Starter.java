@@ -25,16 +25,12 @@ public class Starter implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         questRepository.createRandomQuests();
-        System.out.println(questRepository);
         questRepository.createRandomQuests();
-        System.out.println(questRepository);
         questRepository.createRandomQuests();
-        System.out.println(questRepository);
 
         questService.assignRandomQuest("Goliat");
         questService.assignRandomQuest("Protos");
         questService.assignRandomQuest("David");
 
-        System.out.println(worriorRepository);
     }
 }
