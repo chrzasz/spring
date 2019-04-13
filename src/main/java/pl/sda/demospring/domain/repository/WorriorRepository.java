@@ -49,5 +49,6 @@ public class WorriorRepository {
     }
 
     public void createWorrior(Worrior worrior) {
+        createWorrior(worrior.getName(), worrior.getAge());
     }
 }

@@ -32,7 +32,6 @@ public class WorriorController {
     @RequestMapping(value = "/worriors", method = RequestMethod.POST)
     public String addWorrior(Worrior worrior) {
         service.saveWorrior(worrior);
-
         return "redirect:/worriors";
     }
 }
