@@ -2,8 +2,10 @@ package pl.sda.demospring.domain;
 
 public class Worrior {
 
+    private int id;
     private String name;
     private int age;
+    private int level;
     private Quest quest;
 
     public Worrior() {
@@ -12,6 +14,7 @@ public class Worrior {
     public Worrior(String name, int age) {
         this.name = name;
         this.age = age;
+        this.level = 1;
     }
 
     public String getName() {
@@ -28,6 +31,22 @@ public class Worrior {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public void setQuest(Quest quest) {

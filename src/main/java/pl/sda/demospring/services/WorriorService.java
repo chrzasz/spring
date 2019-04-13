@@ -21,4 +21,12 @@ public class WorriorService {
     public void saveWorrior(Worrior worrior) {
         worriorRepository.createWorrior(worrior);
     }
+
+    public Worrior getWorrior(Integer id) {
+        return worriorRepository.getWorriorById(id);
+    }
+
+    public void deleteWorrior(Integer id) {
+        worriorRepository.deleteWorrior(id);
+    }
 }

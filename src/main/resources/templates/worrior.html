@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Worrior</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.1.3/css/bootstrap.min.css}"/>
+    <script th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.1.3/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container">
+    <p th:text="${worrior.name}"></p>
+    <p th:text="${worrior.level}"></p>
+    <p th:text="${worrior.age}"></p>
+</div>
+</body>
+</html>

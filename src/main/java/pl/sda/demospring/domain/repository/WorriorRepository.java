@@ -7,30 +7,49 @@ import javax.annotation.PostConstruct;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Repository
 public class WorriorRepository {
 
-    Map<String, Worrior> worriors = new HashMap<>();
+    Map<Integer, Worrior> worriors = new HashMap<>();
 
     public WorriorRepository() {
     }
 
 
     public void createWorrior(String name, int age) {
-        worriors.put(name, new Worrior(name, age));
+        Worrior newWorrior = new Worrior(name, age);
+        newWorrior.setId(getNewId());
+        worriors.put(newWorrior.getId(), newWorrior);
+    }
+
+    private int getNewId() {
+        if (worriors.isEmpty()) {
+            return 0;
+        } else {
+            Optional<Integer> opt = worriors.keySet().stream().max(Integer::max);
+            Integer res = opt.get();
+            return res + 1;
+        }
+
+
     }
 
     public Collection<Worrior> getAllWorriors() {
         return worriors.values();
     }
 
-    public Worrior getWorrior(String name) {
-        return worriors.get(name);
+    public Optional<Worrior> getWorrior(String name) {
+        Optional<Worrior> worriorByName = worriors.values()
+                .stream()
+                .filter(worrior -> worrior.getName().equals(name))
+                .findAny();
+        return worriorByName;
     }
 
-    public void deleteWorrior(String name) {
-        worriors.remove(name);
+    public void deleteWorrior(Integer id) {
+        worriors.remove(id);
     }
 
     @PostConstruct
@@ -50,5 +69,9 @@ public class WorriorRepository {
 
     public void createWorrior(Worrior worrior) {
         createWorrior(worrior.getName(), worrior.getAge());
+    }
+
+    public Worrior getWorriorById(Integer id) {
+        return worriors.get(id);
     }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="EN">
 <head>
     <meta charset="UTF-8">
     <title>Worrior list</title>
@@ -9,21 +9,28 @@
 </head>
 <body>
 <div class="container">
-<h1>Worriors</h1>
+    <h1>Worriors</h1>
     <table class="table">
         <thead>
         <tr>
             <td>Name</td>
-            <td>Age</td>
+            <td>Level</td>
+            <td></td>
+            <td></td>
         </tr>
         </thead>
-        <tbody th:each="worrior : ${worriors}">
-        <tr>
+        <tbody>
+        <tr th:each="worrior : ${worriors}">
             <td th:text="${worrior.name}"></td>
-            <td th:text="${worrior.age}"></td>
+            <td th:text="${worrior.level}"></td>
+            <td><a th:href="${'/worrior?id='+worrior.id}">Preview</a></td>
+            <td><a th:href="${'/worrior/delete/'+worrior.id}">Delete</a></td>
         </tr>
         </tbody>
-</table>
+    </table>
+    <div class="row">
+        <a href="/add">Create worrior</a>
+    </div>
 </div>
 </body>
 </html>
