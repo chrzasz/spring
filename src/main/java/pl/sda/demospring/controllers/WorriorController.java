@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import pl.sda.demospring.components.TimeComponent;
+import pl.sda.demospring.domain.PlayerInformation;
 import pl.sda.demospring.domain.Worrior;
 import pl.sda.demospring.services.WorriorService;
 
@@ -16,18 +18,28 @@ import java.util.List;
 public class WorriorController {
 
     @Autowired
+    PlayerInformation playerInformation;
+
+    @Autowired
+    TimeComponent timeComponent;
+
+    @Autowired
     WorriorService service;
 
     @RequestMapping("/worriors")
     public String getWorriors(Model model) {
         List<Worrior> allWoriors = service.getAllWorriors();
         model.addAttribute("worriors", allWoriors);
+        model.addAttribute("timecomponent", timeComponent);
+        model.addAttribute("playerinformation", playerInformation);
         return "worriors";
     }
 
     @RequestMapping("/add")
     public String createWorrior(Model model) {
         model.addAttribute("worrior", new Worrior());
+        model.addAttribute("timecomponent", timeComponent);
+        model.addAttribute("playerinformation", playerInformation);
         return "worriorform";
     }
 
@@ -41,6 +53,8 @@ public class WorriorController {
     public String getWorrior(@RequestParam("id") Integer id, Model model) {
         Worrior worrior = service.getWorrior(id);
         model.addAttribute("worrior", worrior);
+        model.addAttribute("timecomponent", timeComponent);
+        model.addAttribute("playerinformation", playerInformation);
         return "worrior";
     }
 
