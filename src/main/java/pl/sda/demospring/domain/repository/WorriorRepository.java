@@ -47,4 +47,7 @@ public class WorriorRepository {
                 "worriors=" + worriors +
                 '}';
     }
+
+    public void createWorrior(Worrior worrior) {
+    }
 }

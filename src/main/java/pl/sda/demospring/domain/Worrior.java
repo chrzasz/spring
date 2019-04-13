@@ -7,8 +7,6 @@ public class Worrior {
     private Quest quest;
 
     public Worrior() {
-        this.name = "Default Worrior";
-        this.age = 22;
     }
 
     public Worrior(String name, int age) {

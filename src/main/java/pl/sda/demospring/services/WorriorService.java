@@ -18,4 +18,7 @@ public class WorriorService {
         return new ArrayList<>(worriorRepository.getAllWorriors());
     }
 
+    public void saveWorrior(Worrior worrior) {
+        worriorRepository.createWorrior(worrior);
+    }
 }
