@@ -6,10 +6,19 @@
 </head>
 <body>
 <h1>Worriors</h1>
-<div th:each="worrior : ${worriors}">
-    <p th:text="${worrior.name}"></p>
-</div>
-
-
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Age</td>
+    </tr>
+    </thead>
+    <tbody th:each="worrior : ${worriors}">
+    <tr>
+        <td th:text="${worrior.name}"></td>
+        <td th:text="${worrior.age}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
