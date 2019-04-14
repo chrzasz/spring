@@ -34,7 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     @Override
-    public UserDetailsService userDetailsService() throws Exception {
+    public UserDetailsService userDetailsService() {
         UserDetails user = User
                 .withDefaultPasswordEncoder()
                 .username("user")
@@ -42,6 +42,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .roles("USER")
                 .build();
 
-        return new InMemoryUserDetailsManager(user);
+        UserDetails admin = User
+                .withDefaultPasswordEncoder()
+                .username("admin")
+                .password("admin")
+                .roles("ADMIN")
+                .build();
+
+        UserDetails useradmin = User
+                .withDefaultPasswordEncoder()
+                .username("useradmin")
+                .password("pas")
+                .roles("USER", "ADMIN")
+                .build();
+
+        return new InMemoryUserDetailsManager(user, admin, useradmin);
     }
 }
