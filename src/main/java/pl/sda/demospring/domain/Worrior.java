@@ -1,5 +1,8 @@
 package pl.sda.demospring.domain;
 
+import io.swagger.annotations.ApiModel;
+
+@ApiModel(value = "Worrior model")
 public class Worrior {
 
     private int id;

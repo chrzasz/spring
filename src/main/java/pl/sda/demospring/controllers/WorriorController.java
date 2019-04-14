@@ -1,5 +1,8 @@
 package pl.sda.demospring.controllers;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +30,11 @@ public class WorriorController {
     WorriorService service;
 
     @RequestMapping("/worriors")
+    @ApiOperation(value = "returning woriors")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "all OK"),
+            @ApiResponse(code = 500, message = "fuck!!!")
+    })
     public String getWorriors(Model model) {
         List<Worrior> allWoriors = service.getAllWorriors();
         model.addAttribute("worriors", allWoriors);
