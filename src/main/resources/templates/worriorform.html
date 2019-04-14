@@ -9,8 +9,6 @@
 </head>
 <body>
 <div class="container">
-    Actual time <span th:text="${timecomponent.time}"></span>
-    Gold <span th:text="${playerinformation.gold}"></span>
     <form class="form-text" th:object="${worrior}" th:action="@{/worriors}" th:method="post">
         <div class="form-group">
             <label class="label">Name:</label>
