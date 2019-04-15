@@ -27,7 +27,7 @@
             <td th:text="${worrior.name}"></td>
             <td th:text="${worrior.level}"></td>
             <td>
-                <span th:if="${worrior.quest==null}" th:text="'NOT assigned'"/>
+                <span th:if="${worrior.quest==null}">NOT assigned <a th:href="${'/assignQuest?worriorId='+worrior.id}">Assign quest</a></span>
                 <span th:if="${worrior.quest!=null}" th:text="${worrior.quest.description}"/>
             </td>
             <td><a th:href="${'/worrior?id='+worrior.id}">Preview</a></td>

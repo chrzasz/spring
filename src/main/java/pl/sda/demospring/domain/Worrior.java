@@ -23,4 +23,8 @@ public class Worrior {
         this.level = 1;
     }
 
+    public void setQuest(Quest quest) {
+        quest.setStarted(true);
+        this.quest = quest;
+    }
 }

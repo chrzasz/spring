@@ -10,10 +10,18 @@ import lombok.Setter;
 public class Quest {
 
     private String description;
+    private int reward = 100;
+    private int lenght = 30000;
+    private boolean started = false;
+    private boolean completed = false;
 
 
     public Quest() {
         this.description = "default quest";
+    }
+
+    public Quest(String description) {
+        this.description = description;
     }
 
     @Override
