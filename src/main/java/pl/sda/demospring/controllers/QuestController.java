@@ -25,6 +25,8 @@ public class QuestController {
     public String assignQuest(@RequestParam("worriorId") Integer id, Model model) {
         Worrior worrior = worriorService.getWorrior(id);
         List<Quest> notStartedQuests = questService.getAllNotStatredQuest();
+        model.addAttribute("worrior", worrior);
+        model.addAttribute("notStartedQuests", notStartedQuests);
         return "assignQuest";
 
     }
