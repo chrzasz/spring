@@ -2,6 +2,7 @@ package pl.sda.demospring.domain.repository;
 
 import org.springframework.stereotype.Repository;
 import pl.sda.demospring.domain.Worrior;
+import pl.sda.demospring.utils.Ids;
 
 import javax.annotation.PostConstruct;
 import java.util.Collection;
@@ -20,20 +21,8 @@ public class WorriorRepository {
 
     public void createWorrior(String name, int age) {
         Worrior newWorrior = new Worrior(name, age);
-        newWorrior.setId(getNewId());
+        newWorrior.setId(Ids.getNewId(worriors.keySet()));
         worriors.put(newWorrior.getId(), newWorrior);
-    }
-
-    private int getNewId() {
-        if (worriors.isEmpty()) {
-            return 0;
-        } else {
-            Optional<Integer> opt = worriors.keySet().stream().max(Integer::max);
-            Integer res = opt.get();
-            return res + 1;
-        }
-
-
     }
 
     public Collection<Worrior> getAllWorriors() {
@@ -68,7 +57,8 @@ public class WorriorRepository {
     }
 
     public void createWorrior(Worrior worrior) {
-        createWorrior(worrior.getName(), worrior.getAge());
+        worrior.setId(Ids.getNewId(worriors.keySet()));
+        worriors.put(worrior.getId(), worrior);
     }
 
     public Worrior getWorriorById(Integer id) {
