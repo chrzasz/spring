@@ -17,6 +17,7 @@
         <tr>
             <td>Name</td>
             <td>Level</td>
+            <td>Quest</td>
             <td></td>
             <td></td>
         </tr>
@@ -25,6 +26,10 @@
         <tr th:each="worrior : ${worriors}">
             <td th:text="${worrior.name}"></td>
             <td th:text="${worrior.level}"></td>
+            <td>
+                <span th:if="${worrior.quest==null}" th:text="'NOT assigned'"/>
+                <span th:if="${worrior.quest!=null}" th:text="${worrior.quest.description}"/>
+            </td>
             <td><a th:href="${'/worrior?id='+worrior.id}">Preview</a></td>
             <td><a th:href="${'/worrior/delete/'+worrior.id}">Delete</a></td>
         </tr>

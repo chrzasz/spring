@@ -1,5 +1,12 @@
 package pl.sda.demospring.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@AllArgsConstructor
+@Getter
+@Setter
 public class Quest {
 
     private String description;
@@ -7,10 +14,6 @@ public class Quest {
 
     public Quest() {
         this.description = "default quest";
-    }
-
-    public Quest(String description) {
-        this.description = description;
     }
 
     @Override
