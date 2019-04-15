@@ -17,4 +17,10 @@ public class Worrior {
     private int level;
     private Quest quest;
 
+    public Worrior(String name, int age) {
+        this.name = name;
+        this.age = age;
+        this.level = 1;
+    }
+
 }
