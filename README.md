@@ -8,3 +8,5 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.1.4.RELEASE)
 ```
+
+## this is simple CRUD app with DB support and siple GUI
