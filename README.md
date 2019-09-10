@@ -9,4 +9,4 @@
  :: Spring Boot ::        (v2.1.4.RELEASE)
 ```
 
-## this is simple CRUD app with DB support and siple GUI
+## this is simple CRUD app with DB support and simple GUI
